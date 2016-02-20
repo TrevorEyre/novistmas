@@ -1,0 +1,19 @@
+{
+  "name": "novistmas",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gutil": "^1.6.4",
+    "vinyl-ftp": "^0.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevorEyre/novistmas.git"
+  },
+  "author": "Trevor Eyre, Christopher Eyre, Chandler Eyre, Joshua Hessing, Caleb Hessing",
+  "bugs": {
+    "url": "https://github.com/TrevorEyre/novistmas/issues"
+  },
+  "homepage": "https://github.com/TrevorEyre/novistmas#readme"
+}
