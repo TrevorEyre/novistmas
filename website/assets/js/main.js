@@ -4,6 +4,44 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+function startTimer(duration) {
+    var start = Date.now();
+    var diff;
+    var minutes;
+    var seconds;
+    var displayhours = document.getElementById("counthours");
+    var displaydays = document.getElementById("countdays");
+    var displayminutes = document.getElementById("countminutes");
+    var displayseconds = document.getElementById("countseconds");
+  
+    
+    function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        displayminutes.innerHTML = minutes + " ";
+        displayseconds.innerHTML = seconds + " ";
+
+        // if (diff <= 0) {
+        //     // add one second so that the count down starts at the full duration
+        //     // example 05:00 not 04:59
+        //     start = Date.now() + 1000;
+        // }
+        setInterval(timer, 1000);
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+}
+
+
 (function($) {
 
 	skel.breakpoints({
@@ -15,6 +53,11 @@
 	});
 
 	$(function() {
+		
+		var novistmas = Date.parse("11/01/2016");
+		var countdown = novistmas - Date.now();
+	    startTimer(countdown);
+		
 
 		var	$window = $(window),
 			$body = $('body'),
