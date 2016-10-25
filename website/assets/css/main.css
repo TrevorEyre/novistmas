@@ -3928,23 +3928,25 @@
 	text-align: center;
 }
 
+#countdown h1{
+	font-size: 8vw;
+}
+
 #clockdiv {
 	color: #fff;
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
-	font-size: 60px;
+	font-size: 4vw;
 	width: 100%;
 }
 
 #clockdiv > div{
 	padding: 10px;
-	box-sizing: border-box;
 	border-radius: 3px;
 	background: #990000;
 	display: inline-block;
-	width: 20%;
-	height: 20%;
+	width: 15%;
 }
 
 #clockdiv div > span{
@@ -3958,8 +3960,4 @@
 .smalltext{
 	padding-top: 5px;
 	font-size: 16px;
-}
-
-#countdown h1{
-	font-size: 100px;
 }
