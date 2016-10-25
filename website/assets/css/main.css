@@ -3917,9 +3917,11 @@
 			}
 
 		}
-#video {
+
+.video {
 	margin: 0px 0px 0px -50px;
 }
+
 #bigger {
 	font-size:5px;
 }
