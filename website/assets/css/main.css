@@ -3943,15 +3943,15 @@
 
 #clockdiv > div{
 	margin-bottom: 10px;
-	padding: 10px;
+	padding: 1vw;
 	border-radius: 3px;
 	background: #990000;
 	display: inline-block;
-	width: 24%;
+	width: 20%;
 }
 
 #clockdiv div > span{
-	padding: 15px;
+	padding: 2vw 0;
 	border-radius: 3px;
 	background: #ff3333;
 	display: inline-block;
@@ -3959,6 +3959,6 @@
 }
 
 .smalltext{
-	padding-top: 5px;
-	font-size: 16px;
+	padding-top: 1vw;
+	font-size: 2vw;
 }
