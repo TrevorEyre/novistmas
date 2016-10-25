@@ -3923,3 +3923,35 @@
 #bigger {
 	font-size:5px;
 }
+#clockdiv{
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 60px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #990000;
+	display: inline-block;
+	width: 150px;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #ff3333;
+	display: inline-block;
+	width: 100%;
+}
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+
+#countdown h1{
+	font-size: 100px;
+}

@@ -4,45 +4,50 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-function startTimer(duration) {
-    var start = Date.now();
-    var diff;
-    var minutes;
-    var seconds;
-    var displayhours = document.getElementById("counthours");
-    var displaydays = document.getElementById("countdays");
-    var displayminutes = document.getElementById("countminutes");
-    var displayseconds = document.getElementById("countseconds");
-  
-    
-    function timer() {
-        // get the number of seconds that have elapsed since 
-        // startTimer() was called
-        diff = duration - (((Date.now() - start) / 1000) | 0);
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
 
-        // does the same job as parseInt truncates the float
-        minutes = (diff / 60) | 0;
-        seconds = (diff % 60) | 0;
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
 
-        displayminutes.innerHTML = minutes + " ";
-        displayseconds.innerHTML = seconds + " ";
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-        // if (diff <= 0) {
-        //     // add one second so that the count down starts at the full duration
-        //     // example 05:00 not 04:59
-        //     start = Date.now() + 1000;
-        // }
-        setInterval(timer, 1000);
-    };
-    // we don't want to wait a full second before the timer starts
-    timer();
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
 }
 
 
 (function($) {
+	
+	var deadline = new Date(2016,10,1);
+	initializeClock('clockdiv', deadline);
 
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
@@ -56,7 +61,7 @@ function startTimer(duration) {
 		
 		var novistmas = Date.parse("11/01/2016");
 		var countdown = novistmas - Date.now();
-	    startTimer(countdown);
+	    
 		
 
 		var	$window = $(window),
