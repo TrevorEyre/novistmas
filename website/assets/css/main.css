@@ -3942,11 +3942,12 @@
 }
 
 #clockdiv > div{
+	margin-bottom: 10px;
 	padding: 10px;
 	border-radius: 3px;
 	background: #990000;
 	display: inline-block;
-	width: 15%;
+	width: 24%;
 }
 
 #clockdiv div > span{
