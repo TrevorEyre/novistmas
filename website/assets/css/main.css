@@ -3923,20 +3923,28 @@
 #bigger {
 	font-size:5px;
 }
-#clockdiv{
+
+#countdown {
+	text-align: center;
+}
+
+#clockdiv {
 	color: #fff;
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
 	font-size: 60px;
+	width: 100%;
 }
 
 #clockdiv > div{
 	padding: 10px;
+	box-sizing: border-box;
 	border-radius: 3px;
 	background: #990000;
 	display: inline-block;
-	width: 150px;
+	width: 20%;
+	height: 20%;
 }
 
 #clockdiv div > span{
